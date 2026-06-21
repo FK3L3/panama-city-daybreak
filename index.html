@@ -356,6 +356,10 @@
       <div class="row"><label>Wi-Fi</label><input id="op-wifi" placeholder="network / pass"></div>
       <div class="row"><label>Host / mgr</label><input id="op-host" placeholder="name + phone"></div>
       <div class="row"><label>Nearest urgent care</label><input id="op-urgent" placeholder="tap to add"></div>
+      <div class="row"><label>Door code</label><input id="op-doorcode" placeholder="tap to add"></div>
+      <div class="row"><label>Gate code</label><input id="op-gatecode" placeholder="tap to add"></div>
+      <div class="row"><label>Fitness access</label><input id="op-fitness" placeholder="tap to add"></div>
+      <div class="row"><label>Pedestrian gate</label><input id="op-pedgate" placeholder="tap to add"></div>
     </div>
 
     <div class="card full ops">
@@ -391,7 +395,7 @@ const STORE = "destin_daybreak_v1";
 /* ============ STATE ============ */
 let state = {
   flag: null,
-  ops: {addr:"",checkout:"",wifi:"",host:"",urgent:""},
+  ops: {addr:"",checkout:"",wifi:"",host:"",urgent:"",doorcode:"",gatecode:"",fitness:"",pedgate:""},
   checklist: [
     {t:"Reef-safe sunscreen", d:false},
     {t:"Charge phone / portable battery", d:false},
@@ -835,6 +839,10 @@ function addItem(){
   if(!state.ops.addr) state.ops.addr="Sterling Shores 1001, Destin (vrbo.com/3531424)";
   if(!state.ops.wifi) state.ops.wifi="sterling-guest · 43431776";
   if(!state.ops.checkout) state.ops.checkout="Jun 27 · 10:00 AM";
+  if(!state.ops.doorcode) state.ops.doorcode="741434";
+  if(!state.ops.gatecode) state.ops.gatecode="#0862";
+  if(!state.ops.fitness) state.ops.fitness="175100";
+  if(!state.ops.pedgate) state.ops.pedgate="0862";
   wire(); render();
   await fetchAll(); render();
 })();
